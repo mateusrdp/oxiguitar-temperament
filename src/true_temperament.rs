@@ -6,16 +6,13 @@
 //! temperament puts it, the string's stretching and stiffness already
 //! allowed for. Their exact shapes are the maker's own; what they aim at
 //! is published, so a True Temperament neck is modelled as frets that hit
-//! their targets exactly:
-//!
-//! - **Equal temperament**: every note exactly equal-tempered, as the
-//!   sound plugins already play every note. On its own this changes
-//!   nothing; it is the "perfect guitar" to compare the others with.
-//! - **Thidell Formula 1**, Anders Thidell's temperament for the guitar,
-//!   with its per-note offsets from equal temperament and its open-string
-//!   tuning, as published in "Die Wohltemperirte Gitarre / Thidell
-//!   Formula 1, Technical details" (guyguitars.com/truetemperament,
-//!   retrieved 19 Nov 2026).
+//! their targets exactly: **Thidell Formula 1**, Anders Thidell's
+//! temperament for the guitar, with its per-note offsets from equal
+//! temperament and its open-string tuning, as published in "Die
+//! Wohltemperirte Gitarre / Thidell Formula 1, Technical details"
+//! (guyguitars.com/truetemperament, retrieved 19 Nov 2026). The other
+//! True Temperament fret set, equal temperament, is not offered: the sound
+//! plugins already play every note that way, so it would sound as Off.
 
 /// Thidell Formula 1's offsets from equal temperament, in cents, by pitch
 /// class from C.

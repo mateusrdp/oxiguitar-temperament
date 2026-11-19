@@ -7,7 +7,6 @@ The temperament plugin for [OxiGuitar](https://github.com/mateusrdp/oxiguitar), 
   - **Off (equal temperament)**, the default: every note as written.
   - **Realistic guitar**: fretted notes go sharp as a real guitar's do. Pressing a string to the fret stretches it, and a stiff string plays sharper the shorter it is. The guitar is set up as most are, with the 12th fret an exact octave. The rest is the guitar's own error: 1 to 11 cents sharp at the first fret (most on the low wound strings and the plain G), under 2 cents from the 7th fret to the 12th, a little flat above. **Guitar** picks the kind modelled: from the track's instrument (nylon, steel, electric or bass by its General MIDI program), or one of them. Open strings, natural harmonics and dead notes stay as they are.
   - **True Temperament: Thidell Formula 1**: each fret hits its target exactly, in Anders Thidell's temperament for the guitar: purer thirds in the guitar's common keys. Notes are moved −4 to +4 cents (C +2, C# −4, D +2, Eb −4, E −2, F 0, F# −4, G +4, G# −4, A 0, Bb −4, B −1), and the open strings are tuned E −2, A 0, D +2, G +4, B −1, E −1.
-  - **True Temperament: equal temperament**: every fret exactly in tune. Sound plugins already play every note that way, so it sounds as Off.
 - Bends, slides and vibrato keep their shape: the note's offset is added to its whole pitch curve.
 - It changes only the pitches the player plays. The score, the tablature and the saved file stay as written.
 

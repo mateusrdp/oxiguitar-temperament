@@ -28,10 +28,7 @@ use crate::true_temperament;
 /// The track's notes at its temperament.
 pub fn perform(track: &Perform) -> Vec<PlayedNote> {
     let settings = Track::from_text(&track.settings);
-    if settings.mode == Mode::Off
-        || settings.mode == Mode::Equal
-        || track.class != InstrumentClass::Fretted
-    {
+    if settings.mode == Mode::Off || track.class != InstrumentClass::Fretted {
         return track.notes.clone();
     }
     // Each staff's strings, set up once.
@@ -83,7 +80,7 @@ fn offset(
     let fret = n.key.checked_sub(open)?;
     let at_open = fret == 0 || n.sound == sound::HARMONIC;
     match mode {
-        Mode::Off | Mode::Equal => None,
+        Mode::Off => None,
         Mode::Realistic if at_open => None,
         Mode::Realistic => {
             let t = tuned.get(staff)?.get(string)?.as_ref()?;
@@ -142,8 +139,8 @@ mod tests {
             .collect()
     }
 
-    /// Off, equal temperament, unknown settings or a track that isn't
-    /// fretted: every note as given.
+    /// Off, unknown settings (a mode this version doesn't know, such as the
+    /// retired `equal`) or a track that isn't fretted: every note as given.
     #[test]
     fn off_changes_nothing() {
         let notes = vec![

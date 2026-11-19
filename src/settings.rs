@@ -9,7 +9,7 @@
 //! ```
 //!
 //! `mode` is `off` (also when missing or unknown), `realistic`,
-//! `formula-1` or `equal`; `guitar` is the kind of guitar the realistic
+//! or `formula-1`; `guitar` is the kind of guitar the realistic
 //! mode models, `auto` (from the track's instrument), `nylon`, `steel`,
 //! `electric` or `bass`. It is kept whatever the mode, so switching back
 //! and forth loses nothing.
@@ -28,14 +28,12 @@ pub enum Mode {
     Realistic,
     /// On True Temperament frets in Thidell Formula 1.
     Formula1,
-    /// On True Temperament frets in equal temperament.
-    Equal,
 }
 
 impl Mode {
     /// Every mode, in the order the section lists them, with its key in
     /// the settings and its name.
-    pub const ALL: [(Mode, &'static str, &'static str); 4] = [
+    pub const ALL: [(Mode, &'static str, &'static str); 3] = [
         (Mode::Off, "off", "Off (equal temperament)"),
         (Mode::Realistic, "realistic", "Realistic guitar"),
         (
@@ -43,7 +41,6 @@ impl Mode {
             "formula-1",
             "True Temperament: Thidell Formula 1",
         ),
-        (Mode::Equal, "equal", "True Temperament: equal temperament"),
     ];
 
     /// Its key in the settings.
