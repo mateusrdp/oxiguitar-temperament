@@ -9,8 +9,7 @@
 //! - `intonation` is the real guitar: string stretching and stiffness,
 //!   the saddle compensated at the 12th fret.
 //! - `strings` holds the guitars it models: nylon, steel, electric, bass.
-//! - `true_temperament` is True Temperament's frets: Thidell Formula 1,
-//!   or equal temperament.
+//! - `true_temperament` is True Temperament's frets, in Thidell Formula 1.
 //! - `settings` is a track's choice, `section` shows it in the track
 //!   dialog as "Temperament", and `perform` plays the notes by it.
 

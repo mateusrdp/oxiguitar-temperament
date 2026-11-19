@@ -6,7 +6,7 @@ From mateusrdp/oxiguitar#294 (Mateus, 19 Nov 2026): "Check the frequencies produ
 
 - A plugin of its own, `oxiguitar-temperament`, that plays the notes its own way (`performs`).
 - The choice is **per track, saved with the score**: the track dialog's section, kept by the core in `Track::plugins` and the `.oxg` sidecar. No core storage was needed.
-- **Both True Temperament fret sets**, selectable: Thidell Formula 1 and equal temperament.
+- **True Temperament**: Thidell Formula 1. Mateus first asked for both fret sets, selectable, then (19 Nov 2026) **equal temperament dropped**, since it sounds exactly as Off (the sound plugins already play every note in equal temperament) and there is no point offering it.
 - The core's interface grew to give a performer what it needs (interface 1.12, mateusrdp/oxiguitar#319): the track's General MIDI program, each staff's tuning and capo, and the track's settings for the plugin. **One `Perform`**, extended in place rather than a second request, since no released plugin performed.
 
 ## How it plays
@@ -78,7 +78,7 @@ The saddle setbacks are in the range luthiers use: on an electric, the plain G i
 True Temperament AB (Sweden) makes frets bent under each string, so each note lands on its target with the string's stretching and stiffness already allowed for. The shapes are the maker's own. What they aim at is published, so the model is frets that hit their targets exactly:
 
 - **Thidell Formula 1**, Anders Thidell's temperament for the guitar. Offsets from equal temperament by note: C +2, C# −4, D +2, Eb −4, E −2, F 0, F# −4, G +4, G# −4, A 0, Bb −4, B −1. Open strings in standard tuning: E −2, A 0, D +2, G +4, B −1, E −1 (the first string's open E is 1 cent flat, where a fretted E is 2). Source: Anders Thidell, "Die Wohltemperirte Gitarre / Thidell Formula 1, Technical details" (guyguitars.com/truetemperament, retrieved 19 Nov 2026). Open strings of other tunings take their note's offset.
-- **Equal temperament**: every note exactly equal-tempered. The sound plugins already play every note that way, so it sounds as Off. It is there because True Temperament makes it, as a choice to compare with.
+- **Equal temperament** is not offered: True Temperament makes that fret set too, but every note would be exactly equal-tempered, which is how the sound plugins already play every note, so it would sound as Off. A track saved with the mode `equal` (an early test build) plays as Off.
 
 A bass's notes take the same table.
 
@@ -86,7 +86,7 @@ A bass's notes take the same table.
 
 - Unit tests: an ideal string plays equal temperament; every set-up string is in tune at the 12th fret, sharp at the first and within 25 cents everywhere; higher action is sharper; the published Formula 1 table; the settings and the section; perform's rules (open, dead, harmonic, bent notes, other classes).
 - The contract suite on the built `.oxp`, and a track played through OxiGuitar's host at each mode (`tests/contract.rs`).
-- The private corpus (102 Guitar Pro files, 583,162 notes; not in the repository), with every track at each mode through the host: nothing but pitch curves changed, no note gained or lost. 233,728 notes moved in the realistic mode, by at most 14 cents; 288,442 in Formula 1, by at most 4; none in equal temperament.
+- The private corpus (102 Guitar Pro files, 583,162 notes; not in the repository), with every track at each mode through the host: nothing but pitch curves changed, no note gained or lost. 233,728 notes moved in the realistic mode, by at most 14 cents; 288,442 in Formula 1, by at most 4.
 
 ## Later
 

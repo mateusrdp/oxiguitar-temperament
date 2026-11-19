@@ -31,9 +31,6 @@ fn about(mode: Mode) -> &'static str {
         Mode::Formula1 => {
             "True Temperament frets in Thidell Formula 1: purer thirds in the common guitar keys."
         }
-        Mode::Equal => {
-            "True Temperament frets in equal temperament: every fret exactly in tune, as Off."
-        }
     }
 }
 
