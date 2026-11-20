@@ -4,6 +4,10 @@ All notable changes to the temperament plugin. The format follows [Keep a Change
 
 ## [Unreleased]
 
+### Changed
+
+- The plugin SDK is now taken from the `v0.21.3` tag of OxiGuitar, the release that has interface 1.12, instead of the commit it was written against (mateusrdp/oxiguitar#319). The code it builds against is the same.
+
 ## [0.1.0] - 2026-11-20
 
 ### Added
