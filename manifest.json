@@ -1,0 +1,14 @@
+{
+  "interface": "1.12",
+  "id": "oxiguitar.temperament",
+  "name": "Temperament",
+  "version": "0.1.0",
+  "description": "Fretted tracks play as a real guitar would, string stretching and all, or as True Temperament frets would; chosen per track in the track dialog.",
+  "authors": ["Mateus Rocha de Paula", "The OxiGuitar contributors"],
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/mateusrdp/oxiguitar-temperament",
+  "performs": true,
+  "track_sections": [
+    { "id": "temperament", "title": "Temperament", "plays": ["fretted"] }
+  ]
+}

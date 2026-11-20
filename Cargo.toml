@@ -1,0 +1,56 @@
+[package]
+name = "oxiguitar-temperament-plugin"
+description = "The OxiGuitar temperament plugin: a fretted track plays as a real guitar or True Temperament frets would, chosen in the track dialog."
+version = "0.1.0"
+edition = "2024"
+# Rust from rustup, raised only when something needs it (CONTRIBUTING.md).
+rust-version = "1.99"
+license = "GPL-3.0-or-later"
+authors = ["Mateus Rocha de Paula", "The OxiGuitar contributors"]
+repository = "https://github.com/mateusrdp/oxiguitar-temperament"
+homepage = "https://github.com/mateusrdp/oxiguitar-temperament"
+publish = false
+
+[lib]
+# An ordinary library for tests, and temperament.oxp when built with
+# `--features oxp --crate-type cdylib` (build-oxp.sh).
+crate-type = ["lib"]
+
+[features]
+oxp = []
+
+[dependencies]
+# The SDK, from OxiGuitar's repository at the commit of interface 1.12
+# (mateusrdp/oxiguitar#319) until the release that has it is tagged; then
+# its tag. Nothing of OxiGuitar's is on crates.io. The models are our own
+# code (src/intonation.rs, src/true_temperament.rs): no other library.
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
+
+[dev-dependencies]
+# The contract suite (tests/contract.rs) runs the built .oxp file through
+# OxiGuitar's own plugin host.
+oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
+oxiguitar-host = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
+
+# Plugins deny `unsafe` rather than forbid it: `export_plugin!` allows it on
+# the two attributes it generates, and nowhere else.
+[lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+rust_2018_idioms = { level = "warn", priority = -1 }
+unreachable_pub = "warn"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+dbg_macro = "warn"
+todo = "warn"
+
+[profile.release]
+# Small files. Keep the default `panic = "unwind"`: a panic is then caught
+# and reported as an error instead of closing OxiGuitar.
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
+# Its own workspace, wherever the folder is copied.
+[workspace]

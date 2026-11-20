@@ -1,14 +1,30 @@
 # oxiguitar-temperament
 
-Temperament emulation support for OxiGuitar
+The temperament plugin for [OxiGuitar](https://github.com/mateusrdp/oxiguitar), a free, open-source guitar tablature and score viewer, editor and player for Windows, macOS and Linux. Sound plugins play every note exactly in equal temperament; a real guitar doesn't. With this plugin a fretted track plays its notes at the pitches a real guitar, or a neck with True Temperament frets, would give them (mateusrdp/oxiguitar#294).
 
-Part of [OxiGuitar](https://github.com/mateusrdp/oxiguitar), a free, open-source
-guitar tablature and score viewer, editor and player for Windows, macOS and
-Linux. The user manual and the plugin developer guide live in the
-[OxiGuitar repository](https://github.com/mateusrdp/oxiguitar).
+- Plugin file `temperament.oxp`, id `oxiguitar.temperament`, shown as **Temperament**.
+- Per track, in the track dialog's section **Temperament** (fretted tracks: guitars, basses, banjo, sitar), kept in the song's `.oxg` file beside it. **Tuning** is one of:
+  - **Off (equal temperament)**, the default: every note as written.
+  - **Realistic guitar**: fretted notes go sharp as a real guitar's do. Pressing a string to the fret stretches it, and a stiff string plays sharper the shorter it is. The guitar is set up as most are, with the 12th fret an exact octave. The rest is the guitar's own error: 1 to 11 cents sharp at the first fret (most on the low wound strings and the plain G), under 2 cents from the 7th fret to the 12th, a little flat above. **Guitar** picks the kind modelled: from the track's instrument (nylon, steel, electric or bass by its General MIDI program), or one of them. Open strings, natural harmonics and dead notes stay as they are.
+  - **True Temperament: Thidell Formula 1**: each fret hits its target exactly, in Anders Thidell's temperament for the guitar: purer thirds in the guitar's common keys. Notes are moved −4 to +4 cents (C +2, C# −4, D +2, Eb −4, E −2, F 0, F# −4, G +4, G# −4, A 0, Bb −4, B −1), and the open strings are tuned E −2, A 0, D +2, G +4, B −1, E −1.
+- Bends, slides and vibrato keep their shape: the note's offset is added to its whole pitch curve.
+- It changes only the pitches the player plays. The score, the tablature and the saved file stay as written.
+
+The models, their sources and what they leave out are in [docs/design.md](docs/design.md).
+
+## Install
+
+Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The OxiGuitar manual's [install page](https://mateusrdp.github.io/oxiguitar/installing.html) says which one to use and how to keep the plugin updated through your package manager. The plugin needs the OxiGuitar release with plugin interface 1.12 (not released yet).
+
+## Build and test
+
+Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by git commit until interface 1.12 is tagged, then by its tag; nothing of OxiGuitar's is on crates.io.
+
+```sh
+cargo test          # unit tests (the models against their sources), the contract suite on the built .oxp file, and a track played through OxiGuitar's plugin host
+./build-oxp.sh      # dist/temperament-VERSION-SYSTEM-ARCH.oxp
+```
 
 ## Licence
 
-GPL-3.0-or-later. See LICENSE.
-Contributions are welcome under the same terms; see
-[CONTRIBUTING.md](CONTRIBUTING.md).
+GPL-3.0-or-later. See LICENSE. Contributions are welcome under the same terms; see [CONTRIBUTING.md](CONTRIBUTING.md).
