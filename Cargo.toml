@@ -20,17 +20,17 @@ crate-type = ["lib"]
 oxp = []
 
 [dependencies]
-# The SDK, from OxiGuitar's repository at the commit of interface 1.12
-# (mateusrdp/oxiguitar#319) until the release that has it is tagged; then
-# its tag. Nothing of OxiGuitar's is on crates.io. The models are our own
+# The SDK, from OxiGuitar's repository at the tag of the release that has
+# interface 1.12 (mateusrdp/oxiguitar#319). Nothing of OxiGuitar's is on
+# crates.io. The models are our own
 # code (src/intonation.rs, src/true_temperament.rs): no other library.
-oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
 
 [dev-dependencies]
 # The contract suite (tests/contract.rs) runs the built .oxp file through
 # OxiGuitar's own plugin host.
-oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
-oxiguitar-host = { git = "https://github.com/mateusrdp/oxiguitar", rev = "f26212e655c7dd1f9da3f8a9a782f6fa927b7c2b" }
+oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
+oxiguitar-host = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
 
 # Plugins deny `unsafe` rather than forbid it: `export_plugin!` allows it on
 # the two attributes it generates, and nowhere else.
