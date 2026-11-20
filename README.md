@@ -12,9 +12,13 @@ The temperament plugin for [OxiGuitar](https://github.com/mateusrdp/oxiguitar), 
 
 The models, their sources and what they leave out are in [docs/design.md](docs/design.md).
 
+## Manual
+
+The manual is at <https://mateusrdp.github.io/oxiguitar-temperament/>. Its source is in [docs/manual](docs/manual). It covers what the plugin is for, how it works, what it needs and how to install it.
+
 ## Install
 
-Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The OxiGuitar manual's [install page](https://mateusrdp.github.io/oxiguitar/installing.html) says which one to use and how to keep the plugin updated through your package manager. The plugin needs the OxiGuitar release with plugin interface 1.12 (not released yet).
+Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The [manual's install page](https://mateusrdp.github.io/oxiguitar-temperament/install.html) says which one to use and how to keep it updated. The plugin needs the OxiGuitar release with plugin interface 1.12 (not released yet).
 
 ## Build and test
 
