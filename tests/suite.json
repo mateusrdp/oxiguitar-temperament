@@ -1,0 +1,6 @@
+{
+  "repository": "mateusrdp/oxiguitar-temperament",
+  "plugins": [
+    {"name": "temperament", "package": "oxiguitar-temperament-plugin", "library": "oxiguitar_temperament_plugin"}
+  ]
+}

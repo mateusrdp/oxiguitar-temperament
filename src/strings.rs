@@ -176,3 +176,34 @@ impl Kind {
             .map_or(Kind::Auto, |k| k.0)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// "From the instrument" follows the track's General MIDI program:
+    /// nylon, steel (and banjo, sitar, anything else), electric, bass.
+    #[test]
+    fn the_guitar_follows_the_track_s_instrument() {
+        assert_eq!(Kind::of_program(24), Kind::Nylon);
+        assert_eq!(Kind::of_program(25), Kind::Steel);
+        assert_eq!(Kind::of_program(105), Kind::Steel, "banjo");
+        assert_eq!(Kind::of_program(26), Kind::Electric);
+        assert_eq!(Kind::of_program(31), Kind::Electric);
+        assert_eq!(Kind::of_program(33), Kind::Bass);
+        assert!(std::ptr::eq(Kind::Auto.guitar(33), Kind::Bass.guitar(0)));
+        assert!(std::ptr::eq(Kind::Auto.guitar(24), Kind::Nylon.guitar(99)));
+    }
+
+    /// Every kind's key reads back as that kind; anything else is
+    /// "From the instrument".
+    #[test]
+    fn every_guitar_s_key_reads_back() {
+        for (kind, key, name) in Kind::ALL {
+            assert_eq!(Kind::from_key(key), kind, "{key}");
+            assert_eq!(kind.key(), key);
+            assert!(!name.is_empty());
+        }
+        assert_eq!(Kind::from_key("banjo"), Kind::Auto);
+    }
+}
