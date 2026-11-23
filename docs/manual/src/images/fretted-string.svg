@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 345" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title>Why a fretted note plays sharp: pressing the string to the fret makes it longer and tighter</title>
+  <rect width="800" height="345" fill="#ffffff"/>
+  <!-- top: open string -->
+  <text x="20" y="30" font-weight="bold" fill="#222">Open string: tuned exactly</text>
+  <rect x="40" y="70" width="14" height="22" fill="#555"/>
+  <text x="26" y="112" fill="#555" font-size="13">nut</text>
+  <rect x="736" y="70" width="14" height="22" fill="#555"/>
+  <text x="722" y="112" fill="#555" font-size="13">saddle</text>
+  <line x1="300" y1="92" x2="300" y2="80" stroke="#999" stroke-width="5"/>
+  <text x="282" y="112" fill="#999" font-size="13">fret</text>
+  <line x1="40" y1="70" x2="750" y2="70" stroke="#1f6fb2" stroke-width="3"/>
+  <line x1="20" y1="94" x2="770" y2="94" stroke="#c9b48a" stroke-width="6"/>
+  <!-- bottom: fretted string -->
+  <text x="20" y="170" font-weight="bold" fill="#222">Fretted string: pushed down, so it is stretched</text>
+  <rect x="40" y="210" width="14" height="22" fill="#555"/>
+  <rect x="736" y="210" width="14" height="22" fill="#555"/>
+  <line x1="300" y1="232" x2="300" y2="220" stroke="#999" stroke-width="5"/>
+  <line x1="40" y1="234" x2="770" y2="234" stroke="#c9b48a" stroke-width="6"/>
+  <line x1="40" y1="210" x2="300" y2="210" stroke="#1f6fb2" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="300" y1="210" x2="750" y2="210" stroke="#1f6fb2" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <polyline points="40,210 255,226 300,220 750,210" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <ellipse cx="255" cy="238" rx="22" ry="11" fill="#e8c4a8" stroke="#a0785a"/>
+  <text x="210" y="272" fill="#a0785a" font-size="13">finger</text>
+  <text x="330" y="262" fill="#c0392b">longer path, higher tension</text>
+  <text x="330" y="282" fill="#c0392b">= the note comes out a few cents sharp</text>
+  <text x="20" y="314" fill="#555" font-size="13">The dashed line is where the string would be if nothing pressed it.</text><text x="20" y="332" fill="#555" font-size="13">Drawn much exaggerated: the real difference is a fraction of a millimetre.</text>
+</svg>

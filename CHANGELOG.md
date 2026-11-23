@@ -11,6 +11,7 @@ All notable changes to the temperament plugin. The format follows [Keep a Change
 ### Changed
 
 - The plugin SDK is now taken from the `v0.21.3` tag of OxiGuitar, the release that has interface 1.12, instead of the commit it was written against (mateusrdp/oxiguitar#319). The code it builds against is the same.
+- **The manual explains the ideas behind the plugin** (its overview, with pictures), shows how to use it with screenshots, says in Architecture and strategy what it can't do yet, what is left out on purpose and where help is wanted, and has a Credits page listing every project it uses, with links and thanks. The README has a plain-words introduction and a Credits section.
 
 ## [0.1.0] - 2026-11-20
 
