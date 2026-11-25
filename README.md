@@ -20,11 +20,11 @@ The manual is at <https://mateusrdp.github.io/oxiguitar-temperament/>. Its sourc
 
 ## Install
 
-Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The [manual's install page](https://mateusrdp.github.io/oxiguitar-temperament/install.html) says which one to use and how to keep it updated. The plugin needs OxiGuitar 0.23.0 or later (plugin interface 1.16).
+Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The [manual's install page](https://mateusrdp.github.io/oxiguitar-temperament/install.html) says which one to use and how to keep it updated. The plugin needs OxiGuitar 0.24 or later (plugin interface 2.0).
 
 ## Build and test
 
-Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by its git tag (`v0.21.3`); nothing of OxiGuitar's is on crates.io.
+Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by git commit (that of mateusrdp/oxiguitar#350, until OxiGuitar 0.24.0 tags it); nothing of OxiGuitar's is on crates.io.
 
 ```sh
 cargo test          # unit tests (the models against their sources), the contract suite on the built .oxp file, and a track played through OxiGuitar's plugin host
