@@ -9,11 +9,11 @@ import { ComboBox } from "std-widgets.slint";
 
 export component TemperamentSection {
     in property <[string]> modes;
-    in property <int> mode;
+    in-out property <int> mode;
     in property <string> about;
     in property <bool> realistic;
     in property <[string]> guitars;
-    in property <int> guitar;
+    in-out property <int> guitar;
     callback mode-chosen(int);
     callback guitar-chosen(int);
 
@@ -27,7 +27,7 @@ export component TemperamentSection {
             }
             ComboBox {
                 model: root.modes;
-                current-index: root.mode;
+                current-index <=> root.mode;
                 selected => { root.mode-chosen(self.current-index); }
             }
         }
@@ -44,7 +44,7 @@ export component TemperamentSection {
             }
             ComboBox {
                 model: root.guitars;
-                current-index: root.guitar;
+                current-index <=> root.guitar;
                 selected => { root.guitar-chosen(self.current-index); }
             }
         }
