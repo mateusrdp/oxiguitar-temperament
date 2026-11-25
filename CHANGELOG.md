@@ -8,6 +8,8 @@ All notable changes to the temperament plugin. The format follows [Keep a Change
 
 - **Plugin interface 2.0** (mateusrdp/oxiguitar#346): the manifest asks for `"2.0"` and the SDK is at the commit of mateusrdp/oxiguitar#350 until OxiGuitar 0.24.0 tags it. Interface 2.0 is 1.16 without the plugin UI OxiGuitar drew itself; nothing else changes for this plugin. It needs OxiGuitar 0.24 or later, which no longer loads plugins built for interface 1.
 
+## [0.3.0] - 2026-11-25
+
 ### Changed
 
 - **The Temperament section is drawn in Slint** (mateusrdp/oxiguitar#346, plugin interface 1.16): `ui/temperament.slint`, packed in the plugin file, which OxiGuitar runs with its own widgets, fonts and colours. It shows the same choices as before. The plugin needs OxiGuitar 0.23.0 or later (it already did, since its plugin file is an archive); the README and the manual now say so.
