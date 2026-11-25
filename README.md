@@ -2,6 +2,8 @@
 
 The temperament plugin for [OxiGuitar](https://github.com/mateusrdp/oxiguitar), a free, open-source guitar tablature and score viewer, editor and player for Windows, macOS and Linux. Sound plugins play every note exactly in equal temperament; a real guitar doesn't. With this plugin a fretted track plays its notes at the pitches a real guitar, or a neck with True Temperament frets, would give them (mateusrdp/oxiguitar#294).
 
+In plain words: a synthesiser plays every note at its exact textbook pitch, and a real guitar never does. Pressing a string stretches it, so fretted notes come out a few cents sharp, most near the nut. This plugin makes guitar and bass tracks sound the way a real instrument would, or the way a guitar with True Temperament's curved frets (tuned to Anders Thidell's Formula 1) would. The [manual](https://mateusrdp.github.io/oxiguitar-temperament/) explains equal temperament, just intonation and True Temperament with pictures.
+
 - Plugin file `temperament.oxp`, id `oxiguitar.temperament`, shown as **Temperament**.
 - Per track, in the track dialog's section **Temperament** (fretted tracks: guitars, basses, banjo, sitar), kept in the song's `.oxg` file beside it. **Tuning** is one of:
   - **Off (equal temperament)**, the default: every note as written.
@@ -18,16 +20,21 @@ The manual is at <https://mateusrdp.github.io/oxiguitar-temperament/>. Its sourc
 
 ## Install
 
-Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The [manual's install page](https://mateusrdp.github.io/oxiguitar-temperament/install.html) says which one to use and how to keep it updated. The plugin needs the OxiGuitar release with plugin interface 1.12 (not released yet).
+Every [release](https://github.com/mateusrdp/oxiguitar-temperament/releases) holds a zip per system (Linux x86_64 and ARM64, Windows x86_64 and ARM64, macOS), a `.deb` and an `.rpm` for Linux, a per-user Windows installer (no administrator needed), a macOS `.pkg`, and a `SHA256SUMS` file. The [manual's install page](https://mateusrdp.github.io/oxiguitar-temperament/install.html) says which one to use and how to keep it updated. The plugin needs OxiGuitar 0.21.3 or later (plugin interface 1.12).
 
 ## Build and test
 
-Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by git commit until interface 1.12 is tagged, then by its tag; nothing of OxiGuitar's is on crates.io.
+Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by its git tag (`v0.21.3`); nothing of OxiGuitar's is on crates.io.
 
 ```sh
 cargo test          # unit tests (the models against their sources), the contract suite on the built .oxp file, and a track played through OxiGuitar's plugin host
 ./build-oxp.sh      # dist/temperament-VERSION-SYSTEM-ARCH.oxp
+python3 scripts/test-all.py   # every test, as the manual's Testing page says
 ```
+
+## Credits
+
+Our own models, written from G. U. Varieschi and C. M. Gower's and M. B. Anderson and R. G. Beausoleil's published work on guitar intonation, and Thidell Formula 1's published offsets (Anders Thidell, True Temperament AB). Built on OxiGuitar's plugin SDK. The manual's [Credits](https://mateusrdp.github.io/oxiguitar-temperament/credits.html) page lists every project with its authors and licence. Thank you to all of them.
 
 ## Licence
 

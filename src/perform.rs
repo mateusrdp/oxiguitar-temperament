@@ -202,4 +202,42 @@ mod tests {
         );
         assert!(c[1][0] > 0, "{c:?}");
     }
+
+    /// Realistic: a slide's or vibrato's curve keeps its shape, all of it
+    /// moved by the fret it starts at; a natural harmonic sounds its open
+    /// string, so it stays exact; a capo presses the strings as a finger
+    /// does, so a note above it is a fretted note.
+    #[test]
+    fn realistic_keeps_curves_and_harmonics_and_counts_the_capo() {
+        let curve = vec![(1.0, 0), (1.1, 50), (1.2, -50), (1.3, 0)];
+        let mut harmonic = note(1, 76, Vec::new());
+        harmonic.sound = sound::HARMONIC;
+        let mut t = track(
+            r#"{"mode": "realistic", "guitar": "steel"}"#,
+            vec![
+                note(3, 56, curve.clone()),
+                harmonic,
+                note(3, 57, Vec::new()),
+            ],
+        );
+        t.staves[0].capo = 2;
+        let played = perform(&t);
+        let moved: Vec<i32> = played[0].pitch.iter().map(|p| p.1).collect();
+        let by = moved[0];
+        assert_ne!(by, 0, "{moved:?}");
+        assert_eq!(
+            moved,
+            curve.iter().map(|p| p.1 + by).collect::<Vec<_>>(),
+            "the curve's shape is kept"
+        );
+        assert_eq!(
+            played[0].pitch.iter().map(|p| p.0).collect::<Vec<_>>(),
+            curve.iter().map(|p| p.0).collect::<Vec<_>>()
+        );
+        assert!(played[1].pitch.is_empty(), "a harmonic stays as written");
+        assert!(
+            !played[2].pitch.is_empty(),
+            "the capo's second fret is a fret"
+        );
+    }
 }

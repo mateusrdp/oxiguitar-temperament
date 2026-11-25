@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="Helvetica, Arial, sans-serif" font-size="14">
+<title>Thidell Formula 1: each note's offset from equal temperament, in cents</title>
+<rect width="800" height="300" fill="#fff"/>
+<text x="60" y="24" font-weight="bold" fill="#222">Thidell Formula 1: how far each note sits from equal temperament (cents)</text>
+<line x1="60" y1="229.0" x2="770" y2="229.0" stroke="#eee"/><text x="52" y="234.0" text-anchor="end" fill="#555">-4</text>
+<line x1="60" y1="187.0" x2="770" y2="187.0" stroke="#eee"/><text x="52" y="192.0" text-anchor="end" fill="#555">-2</text>
+<line x1="60" y1="145.0" x2="770" y2="145.0" stroke="#888"/><text x="52" y="150.0" text-anchor="end" fill="#555">0</text>
+<line x1="60" y1="103.0" x2="770" y2="103.0" stroke="#eee"/><text x="52" y="108.0" text-anchor="end" fill="#555">+2</text>
+<line x1="60" y1="61.0" x2="770" y2="61.0" stroke="#eee"/><text x="52" y="66.0" text-anchor="end" fill="#555">+4</text>
+<rect x="68.0" y="103.0" width="43.2" height="42.0" fill="#1f6fb2"/>
+<text x="89.6" y="272" text-anchor="middle" fill="#222">C</text>
+<text x="89.6" y="97.0" text-anchor="middle" fill="#555" font-size="12">+2</text>
+<rect x="127.2" y="145.0" width="43.2" height="84.0" fill="#c0392b"/>
+<text x="148.8" y="272" text-anchor="middle" fill="#222">C#</text>
+<text x="148.8" y="246.0" text-anchor="middle" fill="#555" font-size="12">-4</text>
+<rect x="186.3" y="103.0" width="43.2" height="42.0" fill="#1f6fb2"/>
+<text x="207.9" y="272" text-anchor="middle" fill="#222">D</text>
+<text x="207.9" y="97.0" text-anchor="middle" fill="#555" font-size="12">+2</text>
+<rect x="245.5" y="145.0" width="43.2" height="84.0" fill="#c0392b"/>
+<text x="267.1" y="272" text-anchor="middle" fill="#222">Eb</text>
+<text x="267.1" y="246.0" text-anchor="middle" fill="#555" font-size="12">-4</text>
+<rect x="304.7" y="145.0" width="43.2" height="42.0" fill="#c0392b"/>
+<text x="326.2" y="272" text-anchor="middle" fill="#222">E</text>
+<text x="326.2" y="204.0" text-anchor="middle" fill="#555" font-size="12">-2</text>
+<rect x="363.8" y="145.0" width="43.2" height="1.5" fill="#888"/>
+<text x="385.4" y="272" text-anchor="middle" fill="#222">F</text>
+<text x="385.4" y="139.0" text-anchor="middle" fill="#555" font-size="12">0</text>
+<rect x="423.0" y="145.0" width="43.2" height="84.0" fill="#c0392b"/>
+<text x="444.6" y="272" text-anchor="middle" fill="#222">F#</text>
+<text x="444.6" y="246.0" text-anchor="middle" fill="#555" font-size="12">-4</text>
+<rect x="482.2" y="61.0" width="43.2" height="84.0" fill="#1f6fb2"/>
+<text x="503.7" y="272" text-anchor="middle" fill="#222">G</text>
+<text x="503.7" y="55.0" text-anchor="middle" fill="#555" font-size="12">+4</text>
+<rect x="541.3" y="145.0" width="43.2" height="84.0" fill="#c0392b"/>
+<text x="562.9" y="272" text-anchor="middle" fill="#222">G#</text>
+<text x="562.9" y="246.0" text-anchor="middle" fill="#555" font-size="12">-4</text>
+<rect x="600.5" y="145.0" width="43.2" height="1.5" fill="#888"/>
+<text x="622.1" y="272" text-anchor="middle" fill="#222">A</text>
+<text x="622.1" y="139.0" text-anchor="middle" fill="#555" font-size="12">0</text>
+<rect x="659.7" y="145.0" width="43.2" height="84.0" fill="#c0392b"/>
+<text x="681.2" y="272" text-anchor="middle" fill="#222">Bb</text>
+<text x="681.2" y="246.0" text-anchor="middle" fill="#555" font-size="12">-4</text>
+<rect x="718.8" y="145.0" width="43.2" height="21.0" fill="#c0392b"/>
+<text x="740.4" y="272" text-anchor="middle" fill="#222">B</text>
+<text x="740.4" y="183.0" text-anchor="middle" fill="#555" font-size="12">-1</text>
+</svg>

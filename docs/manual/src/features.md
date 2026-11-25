@@ -1,0 +1,16 @@
+# Features and their tests
+
+Everything the temperament plugin does, and the tests that check it. The test names are the ones `cargo test` prints. `scripts/test-all.py` fails when a feature here names no test, or names a test that doesn't exist, so a new feature gets its row and its tests in the same pull request (the [Testing](testing.md) page says how to run them).
+
+| Feature | What it does | Tests |
+| --- | --- | --- |
+| Off by default | Plain equal temperament: every note as written, also for settings this version doesn't know. | `perform::tests::off_changes_nothing`, `settings::tests::settings_read_back_and_unknowns_are_off` |
+| Realistic guitar | Each fretted note moved by the cents a real string plays off: sharp near the nut, the 12th fret in tune, higher action sharper. | `perform::tests::realistic_is_sharp_near_the_nut`, `intonation::tests::a_set_up_guitar_is_in_tune_at_the_octave_and_sharp_near_the_nut`, `intonation::tests::an_ideal_string_plays_equal_temperament`, `intonation::tests::higher_action_is_sharper` |
+| Four guitars, or the track's own | Nylon, steel, electric or bass strings, or "From the instrument", which follows the track's General MIDI program. | `strings::tests::the_guitar_follows_the_track_s_instrument`, `strings::tests::every_guitar_s_key_reads_back` |
+| True Temperament: Thidell Formula 1 | Each note moved by its published offset (-4 to +4 cents), open strings tuned to match. | `perform::tests::formula_1_moves_each_note_by_its_table`, `true_temperament::tests::the_published_offsets` |
+| Bends, slides and vibrato keep their shape | A note's whole pitch curve moves by the offset of the fret it starts at. | `perform::tests::formula_1_moves_each_note_by_its_table`, `perform::tests::realistic_keeps_curves_and_harmonics_and_counts_the_capo` |
+| Open strings, harmonics and dead notes | Open strings and natural harmonics stay exact in the realistic mode (Formula 1 gives them the open string's offset); dead notes have no pitch to move. A capo counts as a fret. | `perform::tests::realistic_keeps_curves_and_harmonics_and_counts_the_capo`, `perform::tests::realistic_is_sharp_near_the_nut`, `perform::tests::formula_1_moves_each_note_by_its_table` |
+| Fretted tracks only | Guitars, basses, banjo and sitar; any other track is left alone. | `perform::tests::off_changes_nothing`, `contract::the_host_plays_a_track_at_its_temperament` |
+| The Temperament section of the track dialog | Picks the mode and the guitar; saved with the track. | `section::tests::the_section_picks_a_mode_and_a_guitar`, `settings::tests::settings_read_back_and_unknowns_are_off` |
+| Through OxiGuitar's player | The host asks the plugin for each track's notes as it gets the song ready to play or export. | `contract::the_host_plays_a_track_at_its_temperament`, `tests::the_manifest_is_valid_for_the_plugin` |
+| A working plugin file | The `.oxp` file keeps the plugin contract, with this repository's SDK version and with the newest release of OxiGuitar. | `contract::the_plugin_file_keeps_the_contract`, `oxiguitar_plugin_checks::the_manifest_matches_the_plugin`, `stage:contract (latest core)` |

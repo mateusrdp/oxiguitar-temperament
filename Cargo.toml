@@ -1,7 +1,7 @@
 [package]
 name = "oxiguitar-temperament-plugin"
 description = "The OxiGuitar temperament plugin: a fretted track plays as a real guitar or True Temperament frets would, chosen in the track dialog."
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 # Rust from rustup, raised only when something needs it (CONTRIBUTING.md).
 rust-version = "1.99"
@@ -24,13 +24,15 @@ oxp = []
 # interface 1.12 (mateusrdp/oxiguitar#319). Nothing of OxiGuitar's is on
 # crates.io. The models are our own
 # code (src/intonation.rs, src/true_temperament.rs): no other library.
-oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
+# Now at v0.23.0 (plugin interface 1.16; plugin files are tar archives,
+# mateusrdp/oxiguitar#347).
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.23.0" }
 
 [dev-dependencies]
 # The contract suite (tests/contract.rs) runs the built .oxp file through
 # OxiGuitar's own plugin host.
-oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
-oxiguitar-host = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.21.3" }
+oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.23.0" }
+oxiguitar-host = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.23.0" }
 
 # Plugins deny `unsafe` rather than forbid it: `export_plugin!` allows it on
 # the two attributes it generates, and nowhere else.
