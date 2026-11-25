@@ -1,0 +1,52 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Mateus Rocha de Paula and the OxiGuitar contributors
+
+// The Track tab's Temperament section (plugin interface 1.16): the mode,
+// what it does, and for the realistic mode the kind of guitar it models.
+// The plugin sets every property (src/section.rs) and hears the choices.
+
+import { ComboBox } from "std-widgets.slint";
+
+export component TemperamentSection {
+    in property <[string]> modes;
+    in property <int> mode;
+    in property <string> about;
+    in property <bool> realistic;
+    in property <[string]> guitars;
+    in property <int> guitar;
+    callback mode-chosen(int);
+    callback guitar-chosen(int);
+
+    VerticalLayout {
+        spacing: 6px;
+        HorizontalLayout {
+            spacing: 8px;
+            Text {
+                text: "Tuning";
+                vertical-alignment: center;
+            }
+            ComboBox {
+                model: root.modes;
+                current-index: root.mode;
+                selected => { root.mode-chosen(self.current-index); }
+            }
+        }
+        Text {
+            text: root.about;
+            wrap: word-wrap;
+            opacity: 0.7;
+        }
+        if root.realistic: HorizontalLayout {
+            spacing: 8px;
+            Text {
+                text: "Guitar";
+                vertical-alignment: center;
+            }
+            ComboBox {
+                model: root.guitars;
+                current-index: root.guitar;
+                selected => { root.guitar-chosen(self.current-index); }
+            }
+        }
+    }
+}

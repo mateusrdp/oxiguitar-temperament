@@ -5,7 +5,7 @@ From mateusrdp/oxiguitar#294 (Mateus, 19 Nov 2026): "Check the frequencies produ
 ## Decided by Mateus (19 Nov 2026)
 
 - A plugin of its own, `oxiguitar-temperament`, that plays the notes its own way (`performs`).
-- The choice is **per track, saved with the score**: the track dialog's section, kept by the core in `Track::plugins` and the `.oxg` sidecar. No core storage was needed.
+- The choice is **per track, saved with the score**: the Track tab's section (a Slint view since interface 1.16, `ui/temperament.slint`), kept by the core in `Track::plugins` and the `.oxg` sidecar. No core storage was needed.
 - **True Temperament**: Thidell Formula 1. Mateus first asked for both fret sets, selectable, then (19 Nov 2026) **equal temperament dropped**, since it sounds exactly as Off (the sound plugins already play every note in equal temperament) and there is no point offering it.
 - The core's interface grew to give a performer what it needs (interface 1.12, mateusrdp/oxiguitar#319): the track's General MIDI program, each staff's tuning and capo, and the track's settings for the plugin. **One `Perform`**, extended in place rather than a second request, since no released plugin performed.
 

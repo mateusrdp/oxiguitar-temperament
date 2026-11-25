@@ -2,7 +2,7 @@
 
 OxiGuitar's sound plugins play every note at its exact textbook pitch. A real guitar never does: its notes drift a few hundredths of a semitone sharp or flat depending on the string and the fret. This plugin makes a guitar or bass track play the way a real instrument would, or the way a guitar with True Temperament frets would.
 
-It changes only what you hear. The score, the tablature and the saved file stay exactly as written. You pick it per track, in the track dialog's **Temperament** section ([How to use it](use-cases.md) shows where).
+It changes only what you hear. The score, the tablature and the saved file stay exactly as written. You pick it per track, in the Track tab's **Temperament** section ([How to use it](use-cases.md) shows where).
 
 The effect is small, a few cents, which is why this page spends a while on what a cent is and why any of it matters. If you just want to try it, skip to [How to use it](use-cases.md).
 
