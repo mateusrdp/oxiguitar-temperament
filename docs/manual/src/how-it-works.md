@@ -45,7 +45,7 @@ The model is a neck whose frets hit Thidell Formula 1's published targets exactl
 ## Where you can help
 
 - **Ears.** The finger-pressure number and the four presets want checking against real guitars. A recording of a guitar with a strobe tuner reading per fret would be gold.
-- **Custom setups.** A small dialog for scale length, gauges and action, in place of the presets, is a well-contained job (`src/strings.rs`, `src/section.rs`).
+- **Custom setups.** A small dialog for scale length, gauges and action, in place of the presets, is a well-contained job (`src/strings.rs`, `src/section.rs`, `ui/temperament.slint`).
 - **Slides that follow the frets.** Needs the note's pitch curve to be split by fret (`src/perform.rs`).
 - **Perfect temperament.** If you know just intonation well, join the discussion in mateusrdp/oxiguitar#294 before writing code.
 

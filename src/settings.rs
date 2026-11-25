@@ -2,7 +2,7 @@
 // Copyright (C) 2026 Mateus Rocha de Paula and the OxiGuitar contributors
 
 //! A track's temperament, kept per track beside the score (`FILE.oxg`,
-//! the track dialog's section, under `oxiguitar.temperament`):
+//! the Track tab's section, under `oxiguitar.temperament`):
 //!
 //! ```json
 //! {"mode": "realistic", "guitar": "auto"}
