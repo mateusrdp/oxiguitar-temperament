@@ -4,7 +4,7 @@
 //! OxiGuitar's temperament plugin (plugin interface 1.16;
 //! mateusrdp/oxiguitar#294, docs/design.md): a fretted track's notes play
 //! at the pitches a real guitar, or a True Temperament neck, would give
-//! them, chosen per track in the track dialog.
+//! them, chosen per track in the Track tab.
 //!
 //! - `intonation` is the real guitar: string stretching and stiffness,
 //!   the saddle compensated at the 12th fret.
