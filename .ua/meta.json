@@ -1,0 +1,37 @@
+{
+  "lastAnalyzedCommit": "32200992c166ac01df3dbb516cde9180234713f0",
+  "graphCommit": "32200992c166ac01df3dbb516cde9180234713f0",
+  "analyzedAt": "2026-11-26T22:00:00.000Z",
+  "graphVersion": "1.0.0",
+  "stats": {
+    "totalNodes": 40,
+    "totalEdges": 27,
+    "totalLayers": 6,
+    "totalTourStops": 6,
+    "filesScanned": 30,
+    "nodeTypes": {
+      "file": 30,
+      "struct:src/intonation.rs:StringSpec": 1,
+      "file:src/lib.rs": 1,
+      "file:src/perform.rs": 1,
+      "file:src/section.rs": 1,
+      "file:src/settings.rs": 1,
+      "file:src/strings.rs": 1,
+      "file:src/true_temperament.rs": 1,
+      "file:tests/contract.rs": 1,
+      "file:tests/suite.json": 1,
+      "file:ui/temperament.slint": 1
+    },
+    "edgeTypes": {
+      "references": 17,
+      "contains": 1,
+      "packages": 1,
+      "uses": 3,
+      "builds": 2,
+      "validates": 2,
+      "monitors": 1
+    },
+    "layersCovered": 40,
+    "unassignedFileNodes": 0
+  }
+}

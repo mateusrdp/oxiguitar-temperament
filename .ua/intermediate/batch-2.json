@@ -1,0 +1,137 @@
+{
+  "batchIndex": 2,
+  "nodes": [
+    {
+      "id": "file:CHANGELOG.md",
+      "type": "file",
+      "name": "Changelog",
+      "summary": "Keeps a Changelog format changelog tracking all notable changes. Covers versions 0.1.0 (initial release with three temperament modes), 0.2.0 (tar archive plugin format, test-all.py runner, improved manual), and 0.3.0 (Slint UI integration, plugin interface 1.16).",
+      "tags": [
+        "docs",
+        "changelog",
+        "versioning"
+      ],
+      "complexity": "low",
+      "filePath": "CHANGELOG.md"
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "file",
+      "name": "Claude working instructions",
+      "summary": "Standing rules for working on this repository with Claude: library usage policy, no telemetry/uploads, no emojis/signatures, branch strategy (develop/main), rust-version management, DCO sign-off rules, test-all.py requirements, and PR workflow via the REST API.",
+      "tags": [
+        "docs",
+        "claude",
+        "procedural"
+      ],
+      "complexity": "low",
+      "filePath": "CLAUDE.md"
+    },
+    {
+      "id": "file:CONTRIBUTING.md",
+      "type": "file",
+      "name": "Contributing guide",
+      "summary": "Contribution guidelines for the repository: branch strategy (develop as default, main for releases), squash-merge workflow, CI requirements, test expectations (every feature needs a row on the Features page), and DCO sign-off process with special handling for bot commits.",
+      "tags": [
+        "docs",
+        "contributing",
+        "procedural"
+      ],
+      "complexity": "low",
+      "filePath": "CONTRIBUTING.md"
+    },
+    {
+      "id": "file:Cargo.toml",
+      "type": "file",
+      "name": "Cargo manifest",
+      "summary": "Rust package manifest for oxiguitar-temperament-plugin v0.3.0, edition 2024, MSRV 1.99. Single dependency on oxiguitar-plugin v0.23.0 (git tag). Dev dependencies on oxiguitar-plugin-test and oxiguitar-host for the contract suite. Configures lints (deny unsafe, warn missing_docs), release profile (thin LTO, codegen-units=1, strip symbols), and an empty workspace.",
+      "tags": [
+        "config",
+        "rust",
+        "dependencies",
+        "build"
+      ],
+      "complexity": "low",
+      "filePath": "Cargo.toml"
+    },
+    {
+      "id": "file:README.md",
+      "type": "file",
+      "name": "Project README",
+      "summary": "Project overview describing the temperament plugin: three modes (Off, Realistic guitar, True Temperament: Thidell Formula 1), per-track settings saved in .oxg sidecar files, pitch curve modification without score changes. Includes manual link, install instructions, build/test commands, credits, and GPL-3.0-or-later license.",
+      "tags": [
+        "docs",
+        "readme",
+        "overview"
+      ],
+      "complexity": "low",
+      "filePath": "README.md"
+    },
+    {
+      "id": "file:build-oxp.sh",
+      "type": "file",
+      "name": "Plugin build script",
+      "summary": "Builds the plugin .oxp file for the current system: cross-compiles for macOS universal (lipo), builds .dll for Windows and .so for Linux. Packs manifest.json and the dynamic library into a tar archive (plugin.so/dll/dylib). Output goes to dist/ with naming convention temperament-VERSION-SYSTEM-ARCH.oxp.",
+      "tags": [
+        "script",
+        "build",
+        "release"
+      ],
+      "complexity": "low",
+      "filePath": "build-oxp.sh"
+    },
+    {
+      "id": "file:clippy.toml",
+      "type": "file",
+      "name": "Clippy configuration",
+      "summary": "Clippy linter settings: MSRV 1.99, allows unwrap/expect/panic/indexing-slicing in tests only.",
+      "tags": [
+        "config",
+        "linting",
+        "clippy"
+      ],
+      "complexity": "low",
+      "filePath": "clippy.toml"
+    },
+    {
+      "id": "file:deny.toml",
+      "type": "file",
+      "name": "Cargo deny configuration",
+      "summary": "cargo-deny configuration for license compliance and security: targets all 6 build targets, allows GPL-3.0, MIT, Apache-2.0, BSD, ISC, Zlib, Unicode, BSL, CC0, OFL licenses, denies unknown registries and git sources, warns on multiple versions, denies wildcards. Only allows crates.io and mateusrdp/oxiguitar git.",
+      "tags": [
+        "config",
+        "security",
+        "licensing"
+      ],
+      "complexity": "low",
+      "filePath": "deny.toml"
+    },
+    {
+      "id": "file:manifest.json",
+      "type": "file",
+      "name": "Plugin manifest",
+      "summary": "OxiGuitar plugin manifest declaring interface 1.16, id oxiguitar.temperament, name Temperament v0.3.0. Declares performs capability, a track section (temperament, plays on fretted instruments), a Slint UI component (TemperamentSection), and the UI view placement in the track tab.",
+      "tags": [
+        "config",
+        "plugin",
+        "manifest"
+      ],
+      "complexity": "low",
+      "filePath": "manifest.json"
+    },
+    {
+      "id": "file:rustfmt.toml",
+      "type": "file",
+      "name": "Rust formatter configuration",
+      "summary": "Rustfmt settings: edition 2024, max width 100, uses field init shorthand.",
+      "tags": [
+        "config",
+        "formatting",
+        "rustfmt"
+      ],
+      "complexity": "low",
+      "filePath": "rustfmt.toml"
+    }
+  ],
+  "edges": []
+}
