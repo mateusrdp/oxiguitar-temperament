@@ -1,0 +1,203 @@
+{
+  "batchIndex": 3,
+  "nodes": [
+    {
+      "id": "file:docs/manual/src/README.md",
+      "type": "file",
+      "name": "Manual home page",
+      "summary": "Main manual page explaining the temperament plugin's purpose: why real guitars don't play exact pitches (stretching, stiffness), what cents are, pure intervals vs equal temperament, why equal temperament works, guitar intonation errors, Perfect temperament as a future direction, True Temperament/Thidell Formula 1 explanation, notable users, and a summary table of the three modes.",
+      "tags": [
+        "docs",
+        "manual",
+        "overview",
+        "music-theory"
+      ],
+      "complexity": "medium",
+      "filePath": "docs/manual/src/README.md"
+    },
+    {
+      "id": "file:docs/manual/src/SUMMARY.md",
+      "type": "file",
+      "name": "Manual table of contents",
+      "summary": "mdBook summary file listing all manual sections: home, how to use it, architecture and strategy, requirements, installation, features and tests, testing guide, and credits.",
+      "tags": [
+        "docs",
+        "manual",
+        "navigation"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/SUMMARY.md"
+    },
+    {
+      "id": "file:docs/manual/src/credits.md",
+      "type": "file",
+      "name": "Credits page",
+      "summary": "Acknowledgments page listing code dependencies (OxiGuitar SDK, Rust), research sources (Varieschi & Gower, Anderson & Beausoleil, Thidell Formula 1, D'Addario tension charts), tools (mdBook, cargo-deny), and thanks to Anders Thidell, Paul Guy, and the physics community.",
+      "tags": [
+        "docs",
+        "manual",
+        "credits"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/credits.md"
+    },
+    {
+      "id": "file:docs/manual/src/features.md",
+      "type": "file",
+      "name": "Features page",
+      "summary": "Features table mapping each plugin feature to its tests: Off by default, Realistic guitar, Four guitars or track's own, True Temperament Thidell Formula 1, bends/slides/vibrato shape preservation, open strings/harmonics/dead notes handling, fretted tracks only, the Temperament UI section, through OxiGuitar's player, and a working plugin file. CI validates every feature names at least one existing test.",
+      "tags": [
+        "docs",
+        "manual",
+        "features",
+        "testing"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/features.md"
+    },
+    {
+      "id": "file:docs/manual/src/how-it-works.md",
+      "type": "file",
+      "name": "Architecture and strategy",
+      "summary": "Technical architecture document: how the plugin fits as a performer in OxiGuitar, the realistic guitar model (straight-line string segments, saddle compensation, two published papers), True Temperament implementation, current limitations (one finger pressure, slides ignore passing frets, whole cents only, four presets, no nut compensation, frets above 24th, bass uses same table), what's left out on purpose, and where community help is wanted.",
+      "tags": [
+        "docs",
+        "manual",
+        "architecture",
+        "design"
+      ],
+      "complexity": "medium",
+      "filePath": "docs/manual/src/how-it-works.md"
+    },
+    {
+      "id": "file:docs/manual/src/install.md",
+      "type": "file",
+      "name": "Installation guide",
+      "summary": "Installation instructions: release downloads (zip per system, .deb, .rpm, Flatpak, Windows installer, macOS .pkg), manual copy instructions with platform-specific plugin folders, macOS quarantine removal, Linux package manager setup (Debian/Ubuntu APT, Fedora DNF), and Flatpak extension configuration.",
+      "tags": [
+        "docs",
+        "manual",
+        "installation"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/install.md"
+    },
+    {
+      "id": "file:docs/manual/src/requirements.md",
+      "type": "file",
+      "name": "Requirements and assumptions",
+      "summary": "System requirements: OxiGuitar 0.23.0+ (plugin interface 1.16), a sound plugin playing each string on its own pitch (MIDI plugin), Windows/macOS/Linux support. Assumptions: guitar set up with 12th fret exact octave, whole cents are sufficient, slides ignore passing frets.",
+      "tags": [
+        "docs",
+        "manual",
+        "requirements"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/requirements.md"
+    },
+    {
+      "id": "file:docs/manual/src/testing.md",
+      "type": "file",
+      "name": "Testing guide",
+      "summary": "Testing documentation: running all tests with scripts/test-all.py, required tools (Rust, git, Python 3.8+, Linux build libraries), the three test stages (cargo test, plugin on newest OxiGuitar release, Features page validation), output files (summary.md, test-all.log), failure reporting procedure, and CLI options (--release, --ignore-rust-version, --core, --out).",
+      "tags": [
+        "docs",
+        "manual",
+        "testing"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/testing.md"
+    },
+    {
+      "id": "file:docs/manual/src/use-cases.md",
+      "type": "file",
+      "name": "How to use it",
+      "summary": "User guide: picking a temperament for a track via the Track tab's Temperament section, hearing a real guitar's intonation (Realistic guitar mode with four guitar types), hearing True Temperament frets (Thidell Formula 1), going back to normal (Off mode), and tips (few cents effect, bends/slides keep shape, capo counts as fret, audio export support).",
+      "tags": [
+        "docs",
+        "manual",
+        "usage",
+        "user-guide"
+      ],
+      "complexity": "low",
+      "filePath": "docs/manual/src/use-cases.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/use-cases.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/how-it-works.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/requirements.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/install.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/features.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/testing.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/README.md",
+      "target": "file:docs/manual/src/credits.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/README.md",
+      "type": "contains"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/use-cases.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/how-it-works.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/requirements.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/install.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/features.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/testing.md",
+      "type": "references"
+    },
+    {
+      "source": "file:docs/manual/src/SUMMARY.md",
+      "target": "file:docs/manual/src/credits.md",
+      "type": "references"
+    }
+  ]
+}
