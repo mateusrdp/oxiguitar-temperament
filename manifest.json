@@ -1,5 +1,5 @@
 {
-  "interface": "1.16",
+  "interface": "2.0",
   "id": "oxiguitar.temperament",
   "name": "Temperament",
   "version": "0.3.0",

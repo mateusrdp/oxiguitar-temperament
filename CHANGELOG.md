@@ -4,6 +4,10 @@ All notable changes to the temperament plugin. The format follows [Keep a Change
 
 ## [Unreleased]
 
+### Changed
+
+- **Plugin interface 2.0** (mateusrdp/oxiguitar#346): the manifest asks for `"2.0"` and the SDK is at the commit of mateusrdp/oxiguitar#350 until OxiGuitar 0.24.0 tags it. Interface 2.0 is 1.16 without the plugin UI OxiGuitar drew itself; nothing else changes for this plugin. It needs OxiGuitar 0.24 or later, which no longer loads plugins built for interface 1.
+
 ## [0.3.0] - 2026-11-25
 
 ### Changed
